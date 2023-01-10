@@ -10,7 +10,7 @@ output: html_document
 
 This is just plain text. R is a *little* frustrating to begin with, but can be **fun**. 
 
-## this is where I can put anything' 
+## this is where I can put anything` 
 ## this is where I can put anything 
 
 [Link text here](Assignment1.Rmd) 
