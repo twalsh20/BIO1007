@@ -1,0 +1,56 @@
+---
+title: "Assignment 2"
+author: "Thomas Walsh"
+date: "2023-01-10"
+output: 
+  prettydoc::html_pretty:
+    theme: lenoids
+    highlight: github
+---
+
+# **Assignment 2** 
+## Created by Thomas Walsh
+### Edited by Thomas Walsh
+
+  Hi, and welcome to my second *assignment*, I am very excited to continue my coding journey.
+  
+  Here is a table regarding the **best** and worst Mario Kart characters:
+  
+  Mario Kart Character | Usage | Opinion
+  ---------------------|-------|----------
+       Toad            | Lots  | Overrated 
+       Yoshi           | Yuh   | Beast
+       Peach           | Eh    | Underrated
+     Baby Mario        | Decent| HATE
+     
+![](Yoshi.jfif)  
+`Look at this beast`
+
+Here is a unordered list of Mario Kart characters
+
+* Toad 
+* Yoshi
+* Mario
+  + Baby Mario
+* Peach
+
+Here is an ordered list of Mario Kart characters
+
+1. Yoshi
+2. Peach
+3. Toad
+4. Baby Mario (boo)
+
+Here is an equation for the size of Baby Mario's head:
+$V = 4/3 * \pi*r^2$ 
+
+The date today is the 10^th^ not the 10~th~
+
+[Best Video](https://www.youtube.com/watch?v=_XkKufyIiAY)
+
+
+Thanks have a good one! 
+
+![](rats.png)
+
+    
