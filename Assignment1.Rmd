@@ -1,0 +1,45 @@
+---
+title: "Assignment 1"
+author: "Thomas Walsh"
+date: "2023-01-10"
+output: html_document
+
+1/9/23 R class 
+
+- console doesnt save
+- script saves but doesnt run -cntrl enter runs 
+- asterik unsaved, can save and text color of title changes
+- tools global option window opens
+- general save data off
+- code softwrap R source files checked will stay visible
+- console fine
+-appearance sky? dracular
+- pane layout source next to console not above
+- packages fine
+- R markdown fine
+- python skip
+- sweave rstuido viewer maybe knitr
+- Git/SVN enable version control
+- apply OK
+
+-===========================================
+-environemtn history etc panel
+- wiill populate as we make variables and stuff
+- broom clear environment 
+- console speaks to R but script saves, install in console
+- terminal talks to computer?, open with bash, shell commands here to communicate with github, common shell = ls
+- files plots packages etc ### setwd() getwd(), sets and gets working directory
+- session, set working directory choose location
+- can find files etc
+-plots show up in plots
+-packages see look up packages update install
+-help look up confusing functions
+- ++++++++++++++++++++++++++++++++++++++++++++
+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
+- git status terminal function, untracked files
+- create new project, version control git
+- add link
+- new R markdown html
+- git add -A
+- git commit-am '<message>' 
+- git push
