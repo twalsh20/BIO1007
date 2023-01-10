@@ -16,6 +16,9 @@ This is just plain text. R is a *little* frustrating to begin with, but can be *
 ## this is where I can put anything` 
 ## this is where I can put anything 
 
-[Assignment](Assignment1.html) 
+[Assignment 1](Assignment1.html) 
 
 [Website Link](https://cat-bounce.com/)
+
+[Assignment 2](Assignment2.html)
+
