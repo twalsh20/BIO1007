@@ -22,8 +22,8 @@ output: html_document
 - Git/SVN enable version control
 - apply OK
 
--===========================================
--environemtn history etc panel
+
+- environemtn history etc panel
 - wiill populate as we make variables and stuff
 - broom clear environment 
 - console speaks to R but script saves, install in console
@@ -31,11 +31,12 @@ output: html_document
 - files plots packages etc ### setwd() getwd(), sets and gets working directory
 - session, set working directory choose location
 - can find files etc
--plots show up in plots
--packages see look up packages update install
--help look up confusing functions
-- ++++++++++++++++++++++++++++++++++++++++++++
-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
+- plots show up in plots
+- packages see look up packages update install
+- help look up confusing functions
+
+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 
+
 - git status terminal function, untracked files
 - create new project, version control git
 - add link
