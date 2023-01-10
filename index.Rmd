@@ -2,8 +2,11 @@
 title: "BIO webpage portfolio"
 author: "Thomas Walsh"
 date: "2023-01-10"
-output: html_document
-
+output: 
+  prettydoc::html_pretty:
+    theme: leonids
+    highlight: github
+---
 # Header
 ## Header 2
 ### Header 3
