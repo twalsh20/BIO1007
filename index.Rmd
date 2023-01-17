@@ -22,3 +22,5 @@ This is just plain text. R is a *little* frustrating to begin with, but can be *
 
 [Assignment 2](Assignment2.html)
 
+[Assignment 3](Assignment3.html)
+
