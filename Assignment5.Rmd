@@ -1,0 +1,62 @@
+---
+title: "Assignment 5"
+author: "Thomas Walsh"
+date: "2023-01-19"
+output: html_document
+---
+
+This is question 2 or 1
+
+```{r}
+
+myLogicalNumbers <- runif(100)
+
+my_logical <- myLogicalNumbers>0.5
+
+myLettersTest <- print(letters)
+
+myLetters <- sample(myLettersTest)
+
+myList <- list(myMatrix = matrix(data=runif(16), nrow=4), my_logical, myLetters)
+
+myList
+
+myList2 <- list(myList$myMatrix[2,2], my_logical[2], myLetters[2])
+
+myList2
+
+typeof(myList$myMatrix[2,2])
+typeof(my_logical[2])
+typeof(myLetters[2])
+
+myVector <- c(myList$myMatrix[2,2],my_logical[2],myLetters[2]) # the data type of this vector will be character because R will coerce all the data into character because myLetters is character data
+
+typeof(myVector)
+
+
+```
+
+This is question 3
+```{r}
+myUnifs <- runif(26, min=1, max=10)
+myLETTERS <- sample(LETTERS)
+
+myDataFrame <- data.frame(myUnifs, myLETTERS)
+myDataFrame
+
+myDataFrame[sample(nrow(myDataFrame), 4,), 1] <- NA
+
+myDataFrame
+which(is.na(myDataFrame))
+
+myDataFrame[order(myDataFrame$myLETTERS),]
+
+myDataFrame
+
+mean(myDataFrame$myUnifs, na.rm = TRUE)
+
+colnames(myDataFrame)[2] <- "myLETTERSnew"
+
+myDataFrame
+```
+
