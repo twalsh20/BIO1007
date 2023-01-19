@@ -1,0 +1,31 @@
+---
+title: "Assignment 4"
+author: "Thomas Walsh"
+date: "2023-01-17"
+output: html_document
+---
+# This is Question 1
+ 
+```{r}
+n_dims1 <- 3:10
+n_dims <- sample(n_dims1,1)
+
+vector1 <- n_dims:n_dims^2
+
+matrix1 <- matrix(data=vector1, nrow=n_dims)
+matrix1
+
+t(matrix1) # it has switched byrow to TRUE
+
+sum(matrix1[1,])
+
+sum(matrix1[n_dims,])
+
+```
+ 
+ 
+ 
+ 
+ 
+ 
+ 

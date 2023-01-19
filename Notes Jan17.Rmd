@@ -1,0 +1,10 @@
+---
+title: "Notes 1/17"
+author: "Thomas Walsh"
+date: "2023-01-17"
+output: html_document
+---
+#### Vectors, Matrices, Data Frames, and Lists
+#### 17 January 2023
+#### TDW
+

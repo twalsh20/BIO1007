@@ -26,3 +26,6 @@ This is just plain text. R is a *little* frustrating to begin with, but can be *
 
 [Weekly Assignment 1](WeeklyAssignment1.html)
 
+[Assignment 4](Assignment4.html)
+
+
