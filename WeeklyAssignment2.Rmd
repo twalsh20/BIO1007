@@ -23,9 +23,16 @@ dataFrame <- myFunc()
 head(dataFrame)
 
 
- #ANOVA <- aov(Type~Value, data=dataFrame, projections=T, qr=T, )
+summary(aov(dataFrame$Value~dataFrame$Type, data=dataFrame, projections=T, qr=T))
  
- 
+ myFunc2 <- function(meanControl2=NULL, meanTreatment2=NULL){
+   Type2 <- c(rep("Control2", 25), rep("Treatment2", 25))
+Value2 <- c(rnorm(25, mean=10, sd=1.5), rnorm(25, mean=45, sd=2))
+dF2 <- data.frame(Type2, Value2, stringsAsFactors = FALSE)
+meanControl2 <- mean(Value2[1:25])
+meanTreatment2 <- mean(Value2[26:50])  
+return(summary(aov(dF2$Value2~dF2$Type2, data=dF2,projections=T,qr=T)[]))
+}
  
 
 ```

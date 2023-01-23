@@ -10,9 +10,10 @@ output: html_document
 n_dims1 <- 3:10
 n_dims <- sample(n_dims1,1)
 
-vector1 <- n_dims:n_dims^2
+vector1 <- 1:n_dims^2
+randVec1 <- sample(vector1)
 
-matrix1 <- matrix(data=vector1, nrow=n_dims)
+matrix1 <- matrix(data=randVec1, nrow=n_dims, ncol=n_dims)
 matrix1
 
 t(matrix1) # it has switched byrow to TRUE
