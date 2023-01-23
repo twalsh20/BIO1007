@@ -19,9 +19,10 @@ matrix1
 t(matrix1) # it has switched byrow to TRUE
 
 sum(matrix1[1,])
+mean(matrix1[1,])
 
 sum(matrix1[n_dims,])
-
+mean(matrix1[n_dims,])
 ```
  
  
