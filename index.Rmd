@@ -33,3 +33,4 @@ This is my portfolio for the Jterm class Reproducible Biology. My name is Thomas
 [Weekly Assignment 1](WeeklyAssignment1.html)
 
 [Weekly Assignment 2](WeeklyAssignment2.html)
+# Notes 
