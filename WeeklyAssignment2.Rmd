@@ -1,0 +1,32 @@
+---
+title: "Weekly Assignment 2"
+author: "Thomas Walsh"
+date: "2023-01-21"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+
+This is Question 1
+```{r}
+myFunc <- function(meanControl=NULL, meanTreatment=NULL){
+Type <- c(rep("Control", 25), rep("Treatment", 25))
+Value <- c(rnorm(25, mean=10, sd=1.5), rnorm(25, mean=45, sd=2))
+dF <- data.frame(Type, Value, stringsAsFactors = FALSE)
+meanControl <- mean(Value[1:25])
+meanTreatment <- mean(Value[26:50])  
+return(dF)
+}
+
+dataFrame <- myFunc()
+head(dataFrame)
+
+
+ #ANOVA <- aov(Type~Value, data=dataFrame, projections=T, qr=T, )
+ 
+ 
+ 
+
+```
+

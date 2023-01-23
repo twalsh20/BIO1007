@@ -7,26 +7,26 @@ output:
     theme: leonids
     highlight: github
 ---
-# Header
-## Header 2
-### Header 3
+# WELCOME
+![](Coder.jfif)
 
-This is just plain text. R is a *little* frustrating to begin with, but can be **fun**. 
-
-## this is where I can put anything` 
-## this is where I can put anything 
-
-[Assignment 1](Assignment1.html) 
 
 [Website Link](https://cat-bounce.com/)
+
+# Assignments
+
+[Assignment 1](Assignment1.html) 
 
 [Assignment 2](Assignment2.html)
 
 [Assignment 3](Assignment3.html)
 
-[Weekly Assignment 1](WeeklyAssignment1.html)
-
 [Assignment 4](Assignment4.html)
 
 [Assignment 5](Assignment5.html)
 
+# Weekly Assignments
+
+[Weekly Assignment 1](WeeklyAssignment1.html)
+
+[Weekly Assignment 2](WeeklyAssignment2.html)
