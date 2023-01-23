@@ -11,9 +11,9 @@
 
 <meta name="author" content="Thomas Walsh" />
 
-<meta name="date" content="2023-01-19" />
+<meta name="date" content="2023-01-23" />
 
-<title>Assignment 5</title>
+<title>Assignment 6</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -350,221 +350,80 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Assignment 5</h1>
+<h1 class="title toc-ignore">Assignment 6</h1>
 <h4 class="author">Thomas Walsh</h4>
-<h4 class="date">2023-01-19</h4>
+<h4 class="date">2023-01-23</h4>
 
 </div>
 
 
-<p>This is question 2 or 1</p>
-<pre class="r"><code>myLogicalNumbers &lt;- runif(100)
+<pre class="r"><code>###Question1
+library(tidyverse)</code></pre>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
+## ✔ ggplot2 3.4.0      ✔ purrr   1.0.1 
+## ✔ tibble  3.1.8      ✔ dplyr   1.0.10
+## ✔ tidyr   1.2.1      ✔ stringr 1.5.0 
+## ✔ readr   2.1.3      ✔ forcats 0.5.2 
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>data(iris)
+str(iris)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    150 obs. of  5 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<pre class="r"><code>head(iris)</code></pre>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
+<pre class="r"><code># 150 observations, 5 variables
 
-my_logical &lt;- myLogicalNumbers&gt;0.5
+###Question2
 
-myLettersTest &lt;- print(letters)</code></pre>
-<pre><code>##  [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot;
-## [20] &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;</code></pre>
-<pre class="r"><code>myLetters &lt;- sample(myLettersTest)
+iris1&lt;-filter(iris, Species==&quot;virginica&quot; | Species== &quot;versicolor&quot;, Sepal.Length&gt;6, Sepal.Width&gt;2.5)
 
-myList &lt;- list(myMatrix = matrix(data=runif(16), nrow=4), my_logical, myLetters)
+# 56 observations, 5 variables
 
-myList</code></pre>
-<pre><code>## $myMatrix
-##           [,1]      [,2]       [,3]      [,4]
-## [1,] 0.4530362 0.6968503 0.18522171 0.3344582
-## [2,] 0.6216702 0.2024058 0.66077904 0.8554461
-## [3,] 0.6397159 0.3734047 0.05040271 0.8349324
-## [4,] 0.7125658 0.2016182 0.94837336 0.8267813
-## 
-## [[2]]
-##   [1] FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE  TRUE  TRUE
-##  [13] FALSE  TRUE FALSE FALSE  TRUE  TRUE FALSE  TRUE  TRUE FALSE FALSE FALSE
-##  [25]  TRUE  TRUE FALSE  TRUE  TRUE FALSE FALSE  TRUE  TRUE FALSE  TRUE FALSE
-##  [37] FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE
-##  [49] FALSE FALSE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE
-##  [61] FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE
-##  [73] FALSE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE  TRUE FALSE
-##  [85]  TRUE  TRUE FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE
-##  [97]  TRUE FALSE  TRUE FALSE
-## 
-## [[3]]
-##  [1] &quot;b&quot; &quot;s&quot; &quot;v&quot; &quot;m&quot; &quot;i&quot; &quot;o&quot; &quot;e&quot; &quot;h&quot; &quot;l&quot; &quot;p&quot; &quot;t&quot; &quot;k&quot; &quot;u&quot; &quot;j&quot; &quot;g&quot; &quot;r&quot; &quot;d&quot; &quot;a&quot; &quot;c&quot;
-## [20] &quot;y&quot; &quot;w&quot; &quot;n&quot; &quot;x&quot; &quot;z&quot; &quot;q&quot; &quot;f&quot;</code></pre>
-<pre class="r"><code>myList2 &lt;- list(myList$myMatrix[2,2], my_logical[2], myLetters[2])
+###Question3
 
-myList2</code></pre>
-<pre><code>## [[1]]
-## [1] 0.2024058
-## 
-## [[2]]
-## [1] FALSE
-## 
-## [[3]]
-## [1] &quot;s&quot;</code></pre>
-<pre class="r"><code>typeof(myList$myMatrix[2,2])</code></pre>
-<pre><code>## [1] &quot;double&quot;</code></pre>
-<pre class="r"><code>typeof(my_logical[2])</code></pre>
-<pre><code>## [1] &quot;logical&quot;</code></pre>
-<pre class="r"><code>typeof(myLetters[2])</code></pre>
-<pre><code>## [1] &quot;character&quot;</code></pre>
-<pre class="r"><code>myVector &lt;- c(myList$myMatrix[2,2],my_logical[2],myLetters[2]) # the data type of this vector will be character because R will coerce all the data into character because myLetters is character data
+iris2&lt;- select(iris1, Species, Sepal.Length, Sepal.Width)
 
-typeof(myVector)</code></pre>
-<pre><code>## [1] &quot;character&quot;</code></pre>
-<p>This is question 3</p>
-<pre class="r"><code>myUnifs &lt;- runif(26, min=1, max=10)
-myLETTERS &lt;- sample(LETTERS)
+# 56 observations, 3 variables
 
-myDataFrame &lt;- data.frame(myUnifs, myLETTERS)
-myDataFrame</code></pre>
-<pre><code>##     myUnifs myLETTERS
-## 1  7.094830         O
-## 2  7.189386         K
-## 3  1.721020         E
-## 4  3.767467         Y
-## 5  9.560473         Q
-## 6  7.617359         V
-## 7  9.745733         I
-## 8  9.961178         J
-## 9  9.482228         G
-## 10 8.127274         U
-## 11 9.706167         R
-## 12 4.450399         D
-## 13 9.586093         X
-## 14 8.251451         S
-## 15 3.560061         T
-## 16 5.246454         C
-## 17 5.369758         A
-## 18 2.565365         F
-## 19 7.858203         P
-## 20 3.688362         N
-## 21 7.468941         W
-## 22 8.480991         B
-## 23 6.230398         M
-## 24 7.806964         Z
-## 25 5.871067         L
-## 26 3.620799         H</code></pre>
-<pre class="r"><code>myDataFrame[sample(nrow(myDataFrame), 4,), 1] &lt;- NA
+###Question4
 
-myDataFrame</code></pre>
-<pre><code>##     myUnifs myLETTERS
-## 1        NA         O
-## 2  7.189386         K
-## 3  1.721020         E
-## 4  3.767467         Y
-## 5  9.560473         Q
-## 6        NA         V
-## 7  9.745733         I
-## 8  9.961178         J
-## 9  9.482228         G
-## 10 8.127274         U
-## 11 9.706167         R
-## 12 4.450399         D
-## 13 9.586093         X
-## 14 8.251451         S
-## 15 3.560061         T
-## 16       NA         C
-## 17 5.369758         A
-## 18 2.565365         F
-## 19 7.858203         P
-## 20 3.688362         N
-## 21 7.468941         W
-## 22 8.480991         B
-## 23 6.230398         M
-## 24       NA         Z
-## 25 5.871067         L
-## 26 3.620799         H</code></pre>
-<pre class="r"><code>which(is.na(myDataFrame))</code></pre>
-<pre><code>## [1]  1  6 16 24</code></pre>
-<pre class="r"><code>myDataFrame[order(myDataFrame$myLETTERS),]</code></pre>
-<pre><code>##     myUnifs myLETTERS
-## 17 5.369758         A
-## 22 8.480991         B
-## 16       NA         C
-## 12 4.450399         D
-## 3  1.721020         E
-## 18 2.565365         F
-## 9  9.482228         G
-## 26 3.620799         H
-## 7  9.745733         I
-## 8  9.961178         J
-## 2  7.189386         K
-## 25 5.871067         L
-## 23 6.230398         M
-## 20 3.688362         N
-## 1        NA         O
-## 19 7.858203         P
-## 5  9.560473         Q
-## 11 9.706167         R
-## 14 8.251451         S
-## 15 3.560061         T
-## 10 8.127274         U
-## 6        NA         V
-## 21 7.468941         W
-## 13 9.586093         X
-## 4  3.767467         Y
-## 24       NA         Z</code></pre>
-<pre class="r"><code>myDataFrame</code></pre>
-<pre><code>##     myUnifs myLETTERS
-## 1        NA         O
-## 2  7.189386         K
-## 3  1.721020         E
-## 4  3.767467         Y
-## 5  9.560473         Q
-## 6        NA         V
-## 7  9.745733         I
-## 8  9.961178         J
-## 9  9.482228         G
-## 10 8.127274         U
-## 11 9.706167         R
-## 12 4.450399         D
-## 13 9.586093         X
-## 14 8.251451         S
-## 15 3.560061         T
-## 16       NA         C
-## 17 5.369758         A
-## 18 2.565365         F
-## 19 7.858203         P
-## 20 3.688362         N
-## 21 7.468941         W
-## 22 8.480991         B
-## 23 6.230398         M
-## 24       NA         Z
-## 25 5.871067         L
-## 26 3.620799         H</code></pre>
-<pre class="r"><code>mean(myDataFrame$myUnifs, na.rm = TRUE)</code></pre>
-<pre><code>## [1] 6.64831</code></pre>
-<pre class="r"><code>colnames(myDataFrame)[2] &lt;- &quot;myLETTERSnew&quot;
+iris3&lt;- arrange(iris2, by=desc(Sepal.Length))
 
-myDataFrame</code></pre>
-<pre><code>##     myUnifs myLETTERSnew
-## 1        NA            O
-## 2  7.189386            K
-## 3  1.721020            E
-## 4  3.767467            Y
-## 5  9.560473            Q
-## 6        NA            V
-## 7  9.745733            I
-## 8  9.961178            J
-## 9  9.482228            G
-## 10 8.127274            U
-## 11 9.706167            R
-## 12 4.450399            D
-## 13 9.586093            X
-## 14 8.251451            S
-## 15 3.560061            T
-## 16       NA            C
-## 17 5.369758            A
-## 18 2.565365            F
-## 19 7.858203            P
-## 20 3.688362            N
-## 21 7.468941            W
-## 22 8.480991            B
-## 23 6.230398            M
-## 24       NA            Z
-## 25 5.871067            L
-## 26 3.620799            H</code></pre>
+head(iris3)</code></pre>
+<pre><code>##     Species Sepal.Length Sepal.Width
+## 1 virginica          7.9         3.8
+## 2 virginica          7.7         3.8
+## 3 virginica          7.7         2.6
+## 4 virginica          7.7         2.8
+## 5 virginica          7.7         3.0
+## 6 virginica          7.6         3.0</code></pre>
+<pre class="r"><code>###Question5
+
+iris4&lt;- mutate(iris3, Sepal.Area= Sepal.Length*Sepal.Width)
+
+# 56 observations, 4 variables
+
+###Question6
+
+irisTab&lt;- summarize(iris4, Avg.Sepal.L=mean(Sepal.Length), Avg.Sepal.W=mean(Sepal.Width), TotalNumber=n())
+irisTab</code></pre>
+<pre><code>##   Avg.Sepal.L Avg.Sepal.W TotalNumber
+## 1    6.698214    3.041071          56</code></pre>
+<pre class="r"><code>###Question7
+
+iris5 &lt;- summarize(iris4, Avg.Sepal.L=mean(Sepal.Length), Avg.Sepal.W=mean(Sepal.Width), TotalNumber=n())</code></pre>
 
 
 

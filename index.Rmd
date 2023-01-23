@@ -1,5 +1,5 @@
 ---
-title: "BIO webpage portfolio"
+title: "BIO Portfolio Webpage"
 author: "Thomas Walsh"
 date: "2023-01-10"
 output: 
@@ -8,6 +8,7 @@ output:
     highlight: github
 ---
 # WELCOME
+This is my portfolio for the Jterm class Reproducible Biology. My name is Thomas Walsh.
 ![](Coder.jfif)
 
 
@@ -15,15 +16,17 @@ output:
 
 # Assignments
 
-[Assignment 1](Assignment1.html) 
+[Assignment 1](Assignments/Assignment1.html) 
 
-[Assignment 2](Assignment2.html)
+[Assignment 2](Assignments/Assignment2.html)
 
-[Assignment 3](Assignment3.html)
+[Assignment 3](Assignments/Assignment3.html)
 
-[Assignment 4](Assignment4.html)
+[Assignment 4](Assignments/Assignment4.html)
 
-[Assignment 5](Assignment5.html)
+[Assignment 5](Assignments/Assignment5.html)
+
+[Assignment 6](Assignments/Assignment6.html)
 
 # Weekly Assignments
 
