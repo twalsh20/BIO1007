@@ -371,37 +371,37 @@ myList &lt;- list(myMatrix = matrix(data=runif(16), nrow=4), my_logical, myLette
 
 myList</code></pre>
 <pre><code>## $myMatrix
-##            [,1]       [,2]      [,3]      [,4]
-## [1,] 0.47337547 0.06956565 0.4140847 0.4658578
-## [2,] 0.04577177 0.16892883 0.5644387 0.6685165
-## [3,] 0.92103970 0.53358042 0.6599409 0.5777515
-## [4,] 0.58483113 0.48439406 0.3774235 0.5149548
+##            [,1]      [,2]      [,3]      [,4]
+## [1,] 0.43211727 0.5692003 0.7850144 0.4773999
+## [2,] 0.02134282 0.2616836 0.5627861 0.3869920
+## [3,] 0.40999600 0.2286081 0.6745779 0.4044751
+## [4,] 0.72650564 0.1630109 0.1213412 0.3344495
 ## 
 ## [[2]]
-##   [1]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE
-##  [13]  TRUE FALSE FALSE  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE FALSE
-##  [25]  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE
-##  [37]  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE
-##  [49] FALSE FALSE  TRUE FALSE  TRUE  TRUE  TRUE FALSE FALSE  TRUE FALSE  TRUE
-##  [61] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE FALSE
-##  [73]  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE
-##  [85] FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE
-##  [97]  TRUE FALSE FALSE  TRUE
+##   [1] FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE
+##  [13] FALSE FALSE  TRUE  TRUE FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE
+##  [25]  TRUE FALSE  TRUE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE  TRUE  TRUE
+##  [37] FALSE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE  TRUE
+##  [49] FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [61]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE
+##  [73]  TRUE FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE
+##  [85] FALSE  TRUE FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE
+##  [97] FALSE FALSE  TRUE  TRUE
 ## 
 ## [[3]]
-##  [1] &quot;q&quot; &quot;a&quot; &quot;t&quot; &quot;c&quot; &quot;y&quot; &quot;n&quot; &quot;f&quot; &quot;m&quot; &quot;z&quot; &quot;l&quot; &quot;p&quot; &quot;b&quot; &quot;j&quot; &quot;u&quot; &quot;i&quot; &quot;k&quot; &quot;r&quot; &quot;h&quot; &quot;v&quot;
-## [20] &quot;d&quot; &quot;o&quot; &quot;x&quot; &quot;g&quot; &quot;w&quot; &quot;e&quot; &quot;s&quot;</code></pre>
+##  [1] &quot;s&quot; &quot;o&quot; &quot;y&quot; &quot;x&quot; &quot;j&quot; &quot;h&quot; &quot;m&quot; &quot;t&quot; &quot;q&quot; &quot;z&quot; &quot;n&quot; &quot;g&quot; &quot;c&quot; &quot;k&quot; &quot;p&quot; &quot;f&quot; &quot;r&quot; &quot;e&quot; &quot;l&quot;
+## [20] &quot;i&quot; &quot;w&quot; &quot;v&quot; &quot;u&quot; &quot;b&quot; &quot;a&quot; &quot;d&quot;</code></pre>
 <pre class="r"><code>myList2 &lt;- list(myList$myMatrix[2,2], my_logical[2], myLetters[2])
 
 myList2</code></pre>
 <pre><code>## [[1]]
-## [1] 0.1689288
+## [1] 0.2616836
 ## 
 ## [[2]]
 ## [1] TRUE
 ## 
 ## [[3]]
-## [1] &quot;a&quot;</code></pre>
+## [1] &quot;o&quot;</code></pre>
 <pre class="r"><code>typeof(myList$myMatrix[2,2])</code></pre>
 <pre><code>## [1] &quot;double&quot;</code></pre>
 <pre class="r"><code>typeof(my_logical[2])</code></pre>
@@ -419,152 +419,152 @@ myLETTERS &lt;- sample(LETTERS)
 myDataFrame &lt;- data.frame(myUnifs, myLETTERS)
 myDataFrame</code></pre>
 <pre><code>##     myUnifs myLETTERS
-## 1  2.314233         S
-## 2  9.998865         R
-## 3  5.681258         Z
-## 4  8.496515         H
-## 5  1.981239         D
-## 6  3.711863         I
-## 7  6.084510         G
-## 8  7.916113         O
-## 9  2.907024         Y
-## 10 1.534054         L
-## 11 4.129359         P
-## 12 5.321826         A
-## 13 1.872851         W
-## 14 8.043258         K
-## 15 3.935812         U
-## 16 9.015642         E
-## 17 4.516452         N
-## 18 5.789512         J
-## 19 1.242303         X
-## 20 2.954731         M
-## 21 9.863590         C
-## 22 8.709725         Q
-## 23 7.232830         V
-## 24 7.237980         B
-## 25 3.815998         F
-## 26 1.037161         T</code></pre>
+## 1  9.283149         V
+## 2  5.814809         W
+## 3  4.051297         U
+## 4  3.490126         I
+## 5  8.881409         L
+## 6  3.049387         S
+## 7  8.754622         B
+## 8  1.919775         M
+## 9  9.218353         D
+## 10 2.746944         P
+## 11 5.021524         N
+## 12 1.077783         H
+## 13 2.448833         G
+## 14 2.591386         X
+## 15 7.880292         E
+## 16 3.471676         K
+## 17 5.471847         O
+## 18 8.007121         T
+## 19 3.717990         R
+## 20 2.682922         J
+## 21 7.120630         C
+## 22 4.616215         Q
+## 23 6.177074         A
+## 24 1.603148         Z
+## 25 3.420717         Y
+## 26 4.831823         F</code></pre>
 <pre class="r"><code>myDataFrame[sample(nrow(myDataFrame), 4,), 1] &lt;- NA
 
 myDataFrame</code></pre>
 <pre><code>##     myUnifs myLETTERS
-## 1  2.314233         S
-## 2        NA         R
-## 3  5.681258         Z
-## 4  8.496515         H
-## 5        NA         D
-## 6  3.711863         I
-## 7  6.084510         G
-## 8  7.916113         O
-## 9  2.907024         Y
-## 10       NA         L
-## 11 4.129359         P
-## 12 5.321826         A
-## 13 1.872851         W
-## 14 8.043258         K
-## 15 3.935812         U
-## 16 9.015642         E
-## 17 4.516452         N
-## 18 5.789512         J
-## 19 1.242303         X
-## 20 2.954731         M
-## 21 9.863590         C
-## 22 8.709725         Q
-## 23 7.232830         V
-## 24       NA         B
-## 25 3.815998         F
-## 26 1.037161         T</code></pre>
+## 1  9.283149         V
+## 2        NA         W
+## 3  4.051297         U
+## 4  3.490126         I
+## 5  8.881409         L
+## 6  3.049387         S
+## 7        NA         B
+## 8  1.919775         M
+## 9  9.218353         D
+## 10 2.746944         P
+## 11 5.021524         N
+## 12 1.077783         H
+## 13 2.448833         G
+## 14 2.591386         X
+## 15       NA         E
+## 16 3.471676         K
+## 17 5.471847         O
+## 18 8.007121         T
+## 19 3.717990         R
+## 20 2.682922         J
+## 21 7.120630         C
+## 22 4.616215         Q
+## 23       NA         A
+## 24 1.603148         Z
+## 25 3.420717         Y
+## 26 4.831823         F</code></pre>
 <pre class="r"><code>which(is.na(myDataFrame))</code></pre>
-<pre><code>## [1]  2  5 10 24</code></pre>
+<pre><code>## [1]  2  7 15 23</code></pre>
 <pre class="r"><code>myDataFrame[order(myDataFrame$myLETTERS),]</code></pre>
 <pre><code>##     myUnifs myLETTERS
-## 12 5.321826         A
-## 24       NA         B
-## 21 9.863590         C
-## 5        NA         D
-## 16 9.015642         E
-## 25 3.815998         F
-## 7  6.084510         G
-## 4  8.496515         H
-## 6  3.711863         I
-## 18 5.789512         J
-## 14 8.043258         K
-## 10       NA         L
-## 20 2.954731         M
-## 17 4.516452         N
-## 8  7.916113         O
-## 11 4.129359         P
-## 22 8.709725         Q
-## 2        NA         R
-## 1  2.314233         S
-## 26 1.037161         T
-## 15 3.935812         U
-## 23 7.232830         V
-## 13 1.872851         W
-## 19 1.242303         X
-## 9  2.907024         Y
-## 3  5.681258         Z</code></pre>
+## 23       NA         A
+## 7        NA         B
+## 21 7.120630         C
+## 9  9.218353         D
+## 15       NA         E
+## 26 4.831823         F
+## 13 2.448833         G
+## 12 1.077783         H
+## 4  3.490126         I
+## 20 2.682922         J
+## 16 3.471676         K
+## 5  8.881409         L
+## 8  1.919775         M
+## 11 5.021524         N
+## 17 5.471847         O
+## 10 2.746944         P
+## 22 4.616215         Q
+## 19 3.717990         R
+## 6  3.049387         S
+## 18 8.007121         T
+## 3  4.051297         U
+## 1  9.283149         V
+## 2        NA         W
+## 14 2.591386         X
+## 25 3.420717         Y
+## 24 1.603148         Z</code></pre>
 <pre class="r"><code>myDataFrame</code></pre>
 <pre><code>##     myUnifs myLETTERS
-## 1  2.314233         S
-## 2        NA         R
-## 3  5.681258         Z
-## 4  8.496515         H
-## 5        NA         D
-## 6  3.711863         I
-## 7  6.084510         G
-## 8  7.916113         O
-## 9  2.907024         Y
-## 10       NA         L
-## 11 4.129359         P
-## 12 5.321826         A
-## 13 1.872851         W
-## 14 8.043258         K
-## 15 3.935812         U
-## 16 9.015642         E
-## 17 4.516452         N
-## 18 5.789512         J
-## 19 1.242303         X
-## 20 2.954731         M
-## 21 9.863590         C
-## 22 8.709725         Q
-## 23 7.232830         V
-## 24       NA         B
-## 25 3.815998         F
-## 26 1.037161         T</code></pre>
+## 1  9.283149         V
+## 2        NA         W
+## 3  4.051297         U
+## 4  3.490126         I
+## 5  8.881409         L
+## 6  3.049387         S
+## 7        NA         B
+## 8  1.919775         M
+## 9  9.218353         D
+## 10 2.746944         P
+## 11 5.021524         N
+## 12 1.077783         H
+## 13 2.448833         G
+## 14 2.591386         X
+## 15       NA         E
+## 16 3.471676         K
+## 17 5.471847         O
+## 18 8.007121         T
+## 19 3.717990         R
+## 20 2.682922         J
+## 21 7.120630         C
+## 22 4.616215         Q
+## 23       NA         A
+## 24 1.603148         Z
+## 25 3.420717         Y
+## 26 4.831823         F</code></pre>
 <pre class="r"><code>mean(myDataFrame$myUnifs, na.rm = TRUE)</code></pre>
-<pre><code>## [1] 5.208753</code></pre>
+<pre><code>## [1] 4.487457</code></pre>
 <pre class="r"><code>colnames(myDataFrame)[2] &lt;- &quot;myLETTERSnew&quot;
 
 myDataFrame</code></pre>
 <pre><code>##     myUnifs myLETTERSnew
-## 1  2.314233            S
-## 2        NA            R
-## 3  5.681258            Z
-## 4  8.496515            H
-## 5        NA            D
-## 6  3.711863            I
-## 7  6.084510            G
-## 8  7.916113            O
-## 9  2.907024            Y
-## 10       NA            L
-## 11 4.129359            P
-## 12 5.321826            A
-## 13 1.872851            W
-## 14 8.043258            K
-## 15 3.935812            U
-## 16 9.015642            E
-## 17 4.516452            N
-## 18 5.789512            J
-## 19 1.242303            X
-## 20 2.954731            M
-## 21 9.863590            C
-## 22 8.709725            Q
-## 23 7.232830            V
-## 24       NA            B
-## 25 3.815998            F
-## 26 1.037161            T</code></pre>
+## 1  9.283149            V
+## 2        NA            W
+## 3  4.051297            U
+## 4  3.490126            I
+## 5  8.881409            L
+## 6  3.049387            S
+## 7        NA            B
+## 8  1.919775            M
+## 9  9.218353            D
+## 10 2.746944            P
+## 11 5.021524            N
+## 12 1.077783            H
+## 13 2.448833            G
+## 14 2.591386            X
+## 15       NA            E
+## 16 3.471676            K
+## 17 5.471847            O
+## 18 8.007121            T
+## 19 3.717990            R
+## 20 2.682922            J
+## 21 7.120630            C
+## 22 4.616215            Q
+## 23       NA            A
+## 24 1.603148            Z
+## 25 3.420717            Y
+## 26 4.831823            F</code></pre>
 
 
 

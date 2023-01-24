@@ -358,6 +358,7 @@ display: none;
 
 
 <pre class="r"><code>###Question1
+# 150 observations, 5 variables
 library(tidyverse)</code></pre>
 <pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
 ## ✔ ggplot2 3.4.0      ✔ purrr   1.0.1 
@@ -383,9 +384,7 @@ str(iris)</code></pre>
 ## 4          4.6         3.1          1.5         0.2  setosa
 ## 5          5.0         3.6          1.4         0.2  setosa
 ## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
-<pre class="r"><code># 150 observations, 5 variables
-
-###Question2
+<pre class="r"><code>###Question2
 
 iris1&lt;-filter(iris, Species==&quot;virginica&quot; | Species== &quot;versicolor&quot;, Sepal.Length&gt;6, Sepal.Width&gt;2.5)
 
@@ -423,7 +422,29 @@ irisTab</code></pre>
 ## 1    6.698214    3.041071          56</code></pre>
 <pre class="r"><code>###Question7
 
-iris5 &lt;- summarize(iris4, Avg.Sepal.L=mean(Sepal.Length), Avg.Sepal.W=mean(Sepal.Width), TotalNumber=n())</code></pre>
+
+irisGroup&lt;- group_by(iris4, Species)
+iris5 &lt;- summarize(irisGroup, Avg.Sepal.L=mean(Sepal.Length), Avg.Sepal.W=mean(Sepal.Width), VirginicaNumber=n())
+
+
+
+###Question8
+
+irisFinal&lt;-iris %&gt;%
+  filter(Species==&quot;virginica&quot; | Species== &quot;versicolor&quot;, Sepal.Length&gt;6, Sepal.Width&gt;2.5) %&gt;%
+  select(Species, Sepal.Length, Sepal.Width) %&gt;%
+  arrange(by=desc(Sepal.Length)) %&gt;%
+  mutate(Sepal.Area= Sepal.Length*Sepal.Width) %&gt;%
+  group_by(Species) %&gt;%
+  summarize(Avg.Sepal.L=mean(Sepal.Length), Avg.Sepal.W=mean(Sepal.Width), VirginicaNumber=n())
+
+  
+print(irisFinal)</code></pre>
+<pre><code>## # A tibble: 2 × 4
+##   Species    Avg.Sepal.L Avg.Sepal.W VirginicaNumber
+##   &lt;fct&gt;            &lt;dbl&gt;       &lt;dbl&gt;           &lt;int&gt;
+## 1 versicolor        6.48        2.99              17
+## 2 virginica         6.79        3.06              39</code></pre>
 
 
 

@@ -357,7 +357,6 @@ display: none;
 </div>
 
 
-<p>This is Question 1</p>
 <pre class="r"><code>myFunc &lt;- function(meanControl=NULL, meanTreatment=NULL){
 Type &lt;- c(rep(&quot;Control&quot;, 25), rep(&quot;Treatment&quot;, 25))
 Value &lt;- c(rnorm(25, mean=10, sd=1.5), rnorm(25, mean=45, sd=2))
@@ -370,13 +369,30 @@ return(dF)
 dataFrame &lt;- myFunc()
 head(dataFrame)</code></pre>
 <pre><code>##      Type     Value
-## 1 Control  9.524454
-## 2 Control  8.387428
-## 3 Control 11.307878
-## 4 Control  9.268074
-## 5 Control 10.197456
-## 6 Control  9.057107</code></pre>
-<pre class="r"><code> #ANOVA &lt;- aov(Type~Value, data=dataFrame, projections=T, qr=T, )</code></pre>
+## 1 Control  8.963600
+## 2 Control 10.215913
+## 3 Control  7.929430
+## 4 Control 10.895336
+## 5 Control  9.390774
+## 6 Control  8.735640</code></pre>
+<pre class="r"><code>summary(aov(dataFrame$Value~dataFrame$Type, data=dataFrame))</code></pre>
+<pre><code>##                Df Sum Sq Mean Sq F value Pr(&gt;F)    
+## dataFrame$Type  1  15325   15325    3909 &lt;2e-16 ***
+## Residuals      48    188       4                   
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre class="r"><code> myFunc2 &lt;- function(meanControl2=NULL, meanTreatment2=NULL){
+   Type2 &lt;- c(rep(&quot;Control2&quot;, 25), rep(&quot;Treatment2&quot;, 25))
+Value2 &lt;- c(rnorm(25, mean=10, sd=1.5), rnorm(25, mean=45, sd=2))
+dF2 &lt;- data.frame(Type2, Value2, stringsAsFactors = FALSE)
+meanControl2 &lt;- mean(Value2[1:25])
+meanTreatment2 &lt;- mean(Value2[26:50]) 
+sum&lt;-summary(aov(dF2$Value2~dF2$Type2, data=dF2))
+final&lt;-sum[[1]][[&quot;Pr(&gt;F)&quot;]][1]
+return(final)
+}
+ myFunc2()</code></pre>
+<pre><code>## [1] 2.052438e-45</code></pre>
 
 
 
