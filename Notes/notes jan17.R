@@ -303,3 +303,31 @@ str(dataSub)
 
 orderedIris <- iris[order(iris$Petal.Length),]
 head(orderedIris)
+
+
+
+
+
+
+
+Assignment 
+class 1/17 
+
+#asign 3 
+Q2 
+z2 <- rep(1:5, c(1,2,3,4,5)
+          
+          z3 <- rep(seq(from=5, to=1), c(1,2,3,4,5)
+                    
+                    Q3 queue[5} <- "serpent"
+
+queue <- queue[-1]
+
+queue <- c("domkey", queue)
+
+queue <- queue[-5]
+
+queue <- append(queue, "aphid", after=3)
+
+
+Finish up with vectors:
