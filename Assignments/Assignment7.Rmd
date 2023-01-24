@@ -1,0 +1,87 @@
+---
+title: "Assignment 7"
+author: "Thomas Walsh"
+date: "2023-01-24"
+output: html_document
+---
+```{r}
+library(ggplot2)
+library(ggthemes)
+library(patchwork)
+library(viridis)
+library(patchwork)
+library(tidyverse)
+
+##Question1
+glimpse(starwars)
+starwarstest<- group_by(starwars, species)
+sumsw<-summarize(starwarstest, TotalNumber=n() )
+View(sumsw)
+
+starwarsNew <- filter(starwars, species %in% c("Droid", "Gungan", "Human", "Kaminoan", "Mirialan", "Twi'lek", "Wookiee", "Zabrak", NA)) %>%
+  select(-(films:starships))
+
+starwarsClean <-starwarsNew[complete.cases(starwarsNew[,2]),]
+  
+sumSW <- group_by(starwarsClean, species) %>%
+  summarize(meanHeight=mean(height), medianHeight=median(height), sdHeight=sd(height))
+sumSW
+
+colors <- viridis(9, option = "magma")
+plot1<-ggplot(data=starwarsClean, aes(x=species, y=height)) +
+  geom_boxplot(color=colors) +
+  scale_fill_manual(values=colors) +
+  xlab("Species") +
+  ylab("Height (cm)") +
+  theme_minimal(base_size = 7, base_family = "sans") +
+  annotate("text", y=max(starwarsClean$height), x=max(starwarsClean$species),label="p=1.2E-0.5")
+plot1
+  
+  
+plot2<-ggplot(data=starwarsClean, aes(x=species))+
+  geom_bar(colors=colors)+
+  xlab("Species")+
+  ylab("Count")+
+  theme_solarized_2(base_size=8, base_family = "sans")
+  
+  plot1/plot2
+  
+  
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
+
