@@ -1,0 +1,146 @@
+---
+title: "Assignment 8"
+author: "Thomas Walsh"
+date: "2023-01-26"
+output: html_document
+---
+
+
+###Question1
+Go through your recent assignments and the posted solutions (Assignment 6 posted solutions and Weekly Assignment 2 solutions) - compare your code to the posted code.
+Can you run your simulated data function with new values for the means? If not, what do you need to change about your code?
+Are there differences between the posted code and yours? Did you notice you were missing anything?
+Make sure you annotate your code using # and leave brief descriptions of your thought process.
+
+
+
+My code for Assignment 6 is also identical to the answer key. I did not use the %in% operator for question 2 which would have made the process more efficient. Additionally, in the last question, I did not arrange by descending average sepal length which would have been better for piping.
+
+
+For Weekly Assignment 2, my code was far less efficient, my code looked like:
+
+myFunc <- function(meanControl=NULL, meanTreatment=NULL)#### I needed to define the two means sds and n value as arguments here{
+Type <- c(rep("Control", 25), rep("Treatment", 25)) ## I should have used each here to be more efficient
+Value <- c(rnorm(25, mean=10, sd=1.5), rnorm(25, mean=45, sd=2))
+dF <- data.frame(Type, Value, stringsAsFactors = FALSE)
+meanControl <- mean(Value[1:25])
+meanTreatment <- mean(Value[26:50])  ## I did not need these two lines and should have specified them in the arguments and in the Value
+return(dF)
+}
+
+
+My ANOVA portion was also very unefficient, I should have created a function just to return a pvalue without any data. My function looked like:
+
+myFunc2 <- function(meanControl2=NULL, meanTreatment2=NULL){
+   Type2 <- c(rep("Control2", 25), rep("Treatment2", 25))
+Value2 <- c(rnorm(25, mean=10, sd=1.5), rnorm(25, mean=45, sd=2))
+dF2 <- data.frame(Type2, Value2, stringsAsFactors = FALSE)
+meanControl2 <- mean(Value2[1:25])
+meanTreatment2 <- mean(Value2[26:50]) ### I didn't need any of the above stuff. 
+sum<-summary(aov(dF2$Value2~dF2$Type2, data=dF2))
+final<-sum[[1]][["Pr(>F)"]][1]
+return(final)
+
+
+
+
+```{r}
+
+set.seed(123)
+simData <- function(mean1=10, sd1=1.5, mean2=45, sd2=2, n=25){
+  
+  Type <- rep(c("Control", "Treatment"), each = n)
+  Value <- c(rnorm(n, mean = mean1, sd = sd1), rnorm(n, mean = mean2, sd = sd2))
+  dframe <- data.frame(Type, Value)
+  return(dframe)
+}
+
+data<-simData()
+
+head(data)
+
+
+myPval <- function(df=NULL){
+  
+  test <- aov(Value ~ Type, data=df)
+  testSummary <- summary(test)
+  p_value <- testSummary[[1]][["Pr(>F)"]][1]
+  return(p_value)
+}
+
+myPval(df=data)
+
+myPval(simData())
+```
+```{r}
+
+##################################################
+# This is my edited code
+myFunc <- function(meanC=10, sdC=1.5, meanT = 45, sdT=2, n=25){
+Type <- c(rep("Control", n), rep("Treatment", n))
+Value <- c(rnorm(n, mean=meanC, sd=sdC), rnorm(n, mean=meanT, sd=sdT))
+dF <- data.frame(Type, Value, stringsAsFactors = FALSE)
+return(dF)
+}
+
+dataFrame <- myFunc()
+head(dataFrame)
+
+
+summary(aov(dataFrame$Value~dataFrame$Type, data=dataFrame))
+ 
+ myFunc2 <- function(df=NULL){
+sum<-summary(aov(Value~Type, data=df))
+final<-sum[[1]][["Pr(>F)"]][1]
+return(final)
+}
+ myFunc2(df=dataFrame)
+ 
+ myFunc2(myFunc())
+ 
+ #### This is my edited code to make my work more efficient and reproducible.
+```
+
+
+
+
+
+Question 2
+```{r}
+## Set up libraries
+library(tidyverse)
+library(ggthemes)
+
+
+# Data obtained from Veysey Powell and Babbitt 2016: An experimental test of buffer utility as a technique for managing pool-breeding amphibians https://datadryad.org/stash/dataset/doi:10.5061%2Fdryad.547rp
+
+dryadData<- read.table(file="veysey-babbitt_data_amphibians.csv", header =TRUE, sep=",")
+getwd()
+# glimpse(dryadData)
+# head(dryadData)
+# table(dryadData$species)
+
+dryadData$species<-factor(dryadData$species, labels=c("Spotted Salamander", "Wood Frog")) #creating 'labels' to use for the plot
+
+#class(dryadData$treatment)
+dryadData$treatment <- factor(dryadData$treatment, 
+            levels=c("Reference",
+                     "100m", "30m"))
+ ## factors data into correct places, ref 100 and 30 m
+
+
+p<- ggplot(data=dryadData, #specifies data 
+       aes(x=interaction(wetland, treatment),# group wetland and treatment 
+           y=count.total.adults, fill=factor(year))) + geom_bar(position="dodge",stat="identity", color="black") + # creates bar graph with total count as y,  with legend, sets orientation of bars correctly,
+  ylab("Number of breeding adults") + # labels y axis
+  xlab("") +
+  scale_y_continuous(breaks = c(0,100,200,300,400,500)) +#sets values for split y axis
+  scale_x_discrete(labels=c("30 (Ref)", "124 (Ref)", "141 (Ref)", "25 (100m)","39 (100m)","55 (100m)","129 (100m)", "7 (30m)","19 (30m)","20 (30m)","59 (30m)")) + # sets x axis value labels
+  facet_wrap(~species, nrow=2, strip.position="right") +# splits the y axis, without there are not two portion to y axis
+  theme_few() + scale_fill_grey() + #sets theme and color of graph
+   theme(panel.background = element_rect(fill = 'gray94', color = 'black'), legend.position="top",  legend.title= element_blank(), axis.title.y = element_text(size=12, face="bold", colour = "black"), strip.text.y = element_text(size = 10, face="bold", colour = "black")) +# further edits theme and color of background text, bolding text, text size, legend position above the graph
+  guides(fill=guide_legend(nrow=1,byrow=TRUE))# makes legend one row not 2 
+
+p
+```
+

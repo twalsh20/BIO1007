@@ -1,0 +1,44 @@
+---
+title: "Weekly Assignment 3"
+author: "Thomas Walsh"
+date: "2023-01-31"
+output: html_document
+---
+
+
+
+
+
+```{r}
+library(tidyverse)
+library(ggthemes)
+library(ggplot2)
+library(ggthemes)
+library(patchwork)
+library(viridis)
+library(dplyr)
+dryadData <-read.table(file="JEcol-2020-0368.R1_data.csv", header =TRUE, sep=",")
+glimpse(dryadData)
+View(dryadData)
+
+dryadCleanS<- filter(dryadData, Variable=="Recruitment subnival")
+
+dryadCleanAl<- filter(dryadData, Variable=="Recruitment alpine")
+dryadCleanSt<- filter(dryadData, Variable=="Recruitment steppe")
+
+p1 <- ggplot(data=dryadCleanAl, mapping=aes(x=Year, fill=Value)) +
+  geom_bar() 
+
+
+
+
+
+
+
+
+
+
+
+
+```
+

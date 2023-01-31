@@ -39,3 +39,32 @@ return(final)
 
 ```
 
+
+Edited code below:
+```{r}
+
+set.seed(123)
+myFunc <- function(meanC=10, sdC=1.5, meanT = 45, sdT=2, n=25){
+Type <- c(rep("Control", n), rep("Treatment", n))
+Value <- c(rnorm(n, mean=meanC, sd=sdC), rnorm(n, mean=meanT, sd=sdT))
+dF <- data.frame(Type, Value, stringsAsFactors = FALSE)
+return(dF)
+}
+
+dataFrame <- myFunc()
+head(dataFrame)
+
+
+summary(aov(dataFrame$Value~dataFrame$Type, data=dataFrame))
+ 
+ myFunc2 <- function(df=NULL){
+sum<-summary(aov(Value~Type, data=df))
+final<-sum[[1]][["Pr(>F)"]][1]
+return(final)
+}
+ myFunc2(df=dataFrame)
+ 
+ myFunc2(myFunc())
+ 
+```
+
