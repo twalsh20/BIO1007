@@ -1,0 +1,103 @@
+---
+title: "Assignment 9"
+author: "Thomas Walsh"
+date: "2023-01-31"
+output: html_document
+---
+Using a for loop and an if statement, calculate the number of zeroes in a numeric vector. Before entering the loop, set up a vector of integers with some zero values. Then, set up a counter variable counter <- 0. Inside the loop, add 1 to counter each time you have a zero in the vector. Finally, use print(counter) for the output. For an extra, optional challenge create a function to do the same thing.
+
+Write a function that takes as input two integers representing the number of rows and columns in a matrix. The output is a matrix of these dimensions in which each element is the product of the row number x the column number.
+
+Use a for loop to repeat your previous functions from Weekly Assignment 2 (which simulate a data frame and extract a p-value) 100 times. Store the results in a data frame that has 1 column indicating the replicate number and 1 column for the p-values (a total of 2 columns and 100 rows).
+```{r}
+
+#Question1
+set.seed(340)
+samp <- sample(0:50, 100, replace=T)
+counter <- 0
+
+for (i in 1:length(samp)) {
+  if (samp[i]==0) {
+    counter <- counter + 1
+  }
+}
+print(counter)
+
+
+
+#Question2
+myFunc3<- function(x=sample(1:50, 1), y=sample(1:50, 1)){
+ m <- matrix(data=NA, nrow=x, ncol=y)
+  for (i in 1:nrow(m)){
+    for (j in 1:ncol(m)){
+  m[i,j]<- i*j
+  }
+     } 
+ return(m)
+ 
+}
+
+myFunc3()
+
+ 
+
+#Question3
+
+
+set.seed(123)
+myFunc <- function(meanC=10, sdC=1.5, meanT = 45, sdT=2, n=25){
+Type <- c(rep("Control", n), rep("Treatment", n))
+Value <- c(rnorm(n, mean=meanC, sd=sdC), rnorm(n, mean=meanT, sd=sdT))
+dF <- data.frame(Type, Value, stringsAsFactors = FALSE)
+return(dF)
+}
+
+dataFrame <- myFunc()
+head(dataFrame)
+
+
+summary(aov(dataFrame$Value~dataFrame$Type, data=dataFrame))
+ 
+ myFunc2 <- function(df=NULL){
+sum<-summary(aov(Value~Type, data=df))
+final<-sum[[1]][["Pr(>F)"]][1]
+return(final)
+ }
+  
+
+ myFunc2(df=dataFrame)
+ 
+ myFunc2(myFunc())
+
+ empty<- data.frame()
+func<- function(df=NULL){
+ for (i in 1:100){
+   dSet<- myFunc2(myFunc())
+   empty[i, 1] <- i
+   empty[i, 2] <- dSet
+ }
+return(empty)
+}
+
+func()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
+

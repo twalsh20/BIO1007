@@ -1,0 +1,40 @@
+---
+title: "Weekly Assignment 4"
+author: "Thomas Walsh"
+date: "2023-02-03"
+output: html_document
+---
+
+
+View(iris)
+AOV <- aov()
+```{r}
+
+library(ggthemes)
+library(tidyverse)
+#View(iris)
+AOV <- aov(Petal.Width ~ factor(Species), data=iris)
+summary(AOV)
+
+ANOplot2 <- ggplot(data=iris, mapping=aes(x=factor(Species), y=Petal.Width)) +
+  geom_boxplot() +
+  scale_fill_grey()
+### I was absent for this class so apologies for this being so rough!!
+
+ANOplot2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
