@@ -1,0 +1,27 @@
+---
+title: "Final Project Presentation/Reflection"
+author: "Thomas Walsh"
+date: "2023-02-03"
+output: html_document
+---
+
+  For my final project, I wanted to create a website. Specifically, I wanted to create a site in order to showcase art, almost like a gallery page. My goal of this project was to go over the skills we learned at the beginning of the course, such as creating a github repository, creating a index file and messing around with said index file. Further, I wanted to find new ways to customize my personal website. Firstly, I knew I wanted to explore new themes for the site, so I used <install.packages("rmdformats")> to install a new package of themes and options to customize my website. This package worked similarly to html pretty, but seemed to have more options. I wanted a sleek theme to fit in with a gallery-esque website, so I chose "chaos" which had a dark background. I used the code in my preamble:
+  
+  rmdformats::downcute:
+    downcute_theme: "chaos"
+    self_contained: true
+    thumbnails: true
+    lightbox: true
+    gallery: true
+    highlight: tango
+    toc_depth: 1
+    fig_width: 5
+    fig_height: 8
+    
+to customize the theme. The downcute theme allowed me to theme the site in dark mode. Thumbnails will display images as thumbnails if true, lightbox places a trim around images if true, if gallery and lightbox are true, it allows oen to click into images and surf through all images on a site. Highlight determines the highlight of the syntax. toc_depth impacts the table of contents, and fig width and height determines the general size of figures. 
+
+On top of this new package, I also wanted to explore the process of creating a menu/ table of contents. This was actually easier than I expected which was super nice! I just needed to set up a large header and code {.tabset} next to the text, and then any headers below would be placed into the menu/ table of contents. This allowed me to create multiple pages without having to create multiple markdown and html files which I thought was neat. 
+
+Next, because I was creating a gallery page, I messed around with images a lot. Two new things I learned were the {height= y%} and {width=x%} helper things. They allowed me to set a constant width or height for my images and allowed me to make the tabs look prettier and more organized. Finally, while this is not very new, I learned that the square brackets when adding images would ad captions. This was a nice way to title some of my pieces.
+
+Overall I really enjoyed creating this website. I had a blast doing so and will definitely use some of these skills in the future.

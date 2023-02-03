@@ -14,6 +14,11 @@ This is my portfolio for the Jterm class Reproducible Biology. My name is Thomas
 
 [Website Link](https://cat-bounce.com/)
 
+[Final Project Presentation/Reflection](FinalReflection.html)
+
+[Final Website](https://twalsh20.github.io/WART/)
+
+
 # Assignments
 
 [Assignment 1](Assignments/Assignment1.html) 
@@ -32,7 +37,7 @@ This is my portfolio for the Jterm class Reproducible Biology. My name is Thomas
 
 [Assignment 8](Assignments/Assignment8.html)
 
-[Assignment 9](Assignments/Assignment98.html)
+[Assignment 9](Assignments/Assingment9.html)
 
 
 # Weekly Assignments
@@ -45,6 +50,6 @@ This is my portfolio for the Jterm class Reproducible Biology. My name is Thomas
 
 [Weekly Assignment 4](WeeklyAssignments/WeeklyAssignment4.html)
 
-# Notes 
+ 
 
 
